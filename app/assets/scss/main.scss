@@ -1,0 +1,26 @@
+@use "./_variables" as *;
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: $main-bg;
+}
+
+.main{
+    flex: 1 0 auto;
+}
+
+.wrapper{
+    max-width: 1616px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.page-title{
+    font-size: 1.875rem;
+}
