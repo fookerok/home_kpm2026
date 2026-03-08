@@ -1,6 +1,9 @@
 <template>
     <main class="main">
         <div class="wrapper">
+            <NavPag v-model="activeMenu" :items="restaurantTabs" />
+        </div>
+        <div v-if="activeMenu === 'menu'" class="wrapper">
             <div class="relative flex items-center justify-center gap-[24px]"> 
                 <Button class="">
                     <SvgIcon name="arrow" w="80px" h="80px"/>
@@ -19,19 +22,22 @@
         </div>
     </main>
     <ElFooter class="relative">
-        <SvgIcon class="absolute bottom-0 right-0" name="menu" w="483px" h="514px"/>
+        <SvgIcon class="absolute bottom-0 right-0" name="menu" w="483px" h="415.38px"/>
     </ElFooter>
 
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import ElFooter from '~/components/layouts/ElFooter.vue';
-
-    export default {
-        components:{
-            ElFooter
-        }
-    }
+import NavPag from '~/components/NavPag.vue';
+const activeMenu = ref('menu')
+const restaurantTabs = [
+    { id: 'menu',  icon: 'menu',  name: 'Основное меню' },
+    { id: 'lunch', icon: 'lunch', name: 'Ланч меню' },
+    { id: 'wine',  icon: 'wine',  name: 'Винная карта' },
+    { id: 'bar', icon: 'bar', name: 'Барная карта' }
+]
 </script>
 
 <style lang="scss" scoped>
