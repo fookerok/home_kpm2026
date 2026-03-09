@@ -81,11 +81,19 @@ const getMenuImg = (num) => {
 }
 
 .pdf-btn {
-  border: 2px solid $border;
-  transition: all 0.3s ease;
-  &:hover {
-    background: $border;
-    color: $dark;
-  }
+    box-sizing: border-box;
+    color: $light-gray;
+    text-transform: unset;
+    background: transparent;
+    border: 2px solid $border;
+    &:hover {
+        color: black;
+    }
 }
+.descr-btn{
+    font-weight: 600;
+    color: $red;
+}
+
+
 </style>

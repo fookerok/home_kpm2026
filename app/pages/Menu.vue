@@ -16,6 +16,6 @@ import MenuList from '~/components/MenuList.vue';
 
 <style lang="scss" scoped>
 .footer-svg{
-    z-index: 0;
+    z-index: 1;
 }
 </style>
