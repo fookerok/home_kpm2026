@@ -1,19 +1,40 @@
 <template>
-    <div class="cards-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-between gap-[24px]">        
+    <div class="mb-[50px] cards-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-between gap-x-[24px] gap-y-[50px]">        
         <CardNews 
             v-for="item of list" 
             :key="item.id" 
             :newsCard="item"
             />
     </div>
+    <button class="upload-btn">Загрузить ещё</button>
+    <div class="mt-[20px] pagination flex justify-center gap-[10px]">
+        <button 
+            v-for="page in pages" 
+            :key="page"
+            class="pagination__btn"
+            :class="{ 'active': currentPage === page }"
+            @click="setPage(page)"
+            >
+            {{ page }}
+        </button>
+    </div>
+
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import CardNews from './CardNews.vue';
+const currentPage = ref(1);
+
+const pages = [1, 2, 3, 4];
+
+const setPage = (page) => {
+  currentPage.value = page;
+};
 
 const imagesObj = import.meta.glob('./../assets/img/news/*.webp', { eager: true });
 const img = Object.values(imagesObj).map(img => img.default);
+
 const list = ref([
     {
         id: 1,
@@ -103,5 +124,37 @@ const list = ref([
 </script>
 
 <style lang="scss" scoped>
+.upload-btn{
+    height: 50px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 2px solid $border;
+    color: $light-gray;
+    &:hover{
+        background-color: $dark;
+        color: white;
+        transition: 0.2s;
+    }
 
+}
+.pagination{
+    &__btn{
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        box-sizing: border-box;
+        border: 2px solid $border;
+        color: $light-gray;
+
+
+        &.active, &:hover{
+            background-color: $dark;
+            color: white;
+        }
+        &:hover{
+            transition: 0.2s;
+        }
+    }
+}
 </style>

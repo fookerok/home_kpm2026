@@ -3,8 +3,9 @@
     :style="{ width: w, height: h }"
     :class="['svg-icon', `svg-icon--${name}`]" 
     aria-hidden="true"
+    :color="color"
   >
-    <use :xlink:href="`/sprite/sprite.svg#${name}`" />
+    <use :xlink:href="`#${name}`" :href="`#${name}`" />
   </svg>
 </template>
 
@@ -21,13 +22,23 @@
         h: {
             type: String,
             required: true
+        },
+        color:{
+            type: String,
         }
     })
 </script>
 
-<style scoped>
-.icon {
+<style lang="scss" scoped>
+.svg-icon {
     overflow: visible;
-    color: transparent !important;
+}
+.icon {
+  fill: currentColor; 
+  stroke: currentColor;
+
+  :deep(path) {
+    fill: currentColor;
+  }
 }
 </style>

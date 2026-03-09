@@ -5,15 +5,15 @@
         </div>
         <div v-if="activeMenu === 'menu'" class="wrapper">
             <div class="relative flex items-center justify-center gap-[24px]"> 
-                <Button class="">
-                    <SvgIcon name="arrow" w="80px" h="80px"/>
+                <Button>
+                    <SvgIcon name="arrow" w="80px" h="80px" color="var(--red)"/>
                 </Button>
                 <div class="menu-container inline-flex justify-center gap-[24px] w-full my-[50px]">
                     <img class="menu-card" src="../assets/img/menu/menu1.png" alt="">
                     <img class="menu-card" src="../assets/img/menu/menu2.png" alt="">
                 </div>
                 <Button class="rotate-180">
-                    <SvgIcon name="arrow" w="80px" h="80px"/>
+                    <SvgIcon name="arrow" w="80px" h="80px" color="var(--red)"/>
                 </Button>
             </div>
             <div class="text-center">
@@ -22,7 +22,7 @@
         </div>
     </main>
     <ElFooter class="relative">
-        <SvgIcon class="absolute bottom-0 right-0" name="menu" w="483px" h="415.38px"/>
+        <SvgIcon class="absolute bottom-0 right-0 footer-svg" name="menu" w="483px" h="415.38px"/>
     </ElFooter>
 
 </template>
@@ -51,5 +51,8 @@ const restaurantTabs = [
 .descr-btn{
     font-weight: 600;
     color: $red;
+}
+.footer-svg{
+    z-index: 0;
 }
 </style>

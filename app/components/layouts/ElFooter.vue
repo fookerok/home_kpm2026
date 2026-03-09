@@ -10,10 +10,8 @@
     </footer>
 </template>
 
-<script>
-    export default {
-        
-    }
+<script setup>
+
 </script>
 
 <style lang="scss" scoped>
@@ -24,13 +22,16 @@
     .wrapper{
         border-top: 1px solid $border;
         padding: 42px 0 50px 0;
-
     }
     &__text{
         color: $light-gray;
     }
     &__link{
         color: $dark;
+        &:hover{
+            color: $red;
+            transform: color 0.2s;
+        }
     }
 }
 

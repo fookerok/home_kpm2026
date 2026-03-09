@@ -13,17 +13,23 @@
                 <SvgIcon name="adress" w="32px" h="32px"/>
                 <div class="info-block flex flex-col">
                     <div class="top-banner__title text-sm">Адрес:</div>
-                    <a href="tel:+79775295822" class="adress-link">Московская область, <br>г. Коломна, ул. Октябрьской революции, 210</a>
+                    <a target="_blank" href="https://yandex.ru/maps/-/CPuNIF6v" class="adress-link">Московская область, <br>г. Коломна, ул. Октябрьской революции, 210</a>
                 </div>
             </div>
             <div class="banner-item flex gap-[20px] items-center">
                 <SvgIcon name="messages" w="32px" h="32px"/>
-                <div class="info-block flex flex-col">
+                <div class="info-block flex flex-col gap-[10px]">
                     <div class="top-banner__title text-sm">Социальные сети:</div>
-                    <div class="flex gap-[25px]">
-                        <SvgIcon name="vk" w="24px" h="24px"/>
-                        <SvgIcon name="tg" w="24px" h="24px"/>
-                        <SvgIcon name="wp" w="24px" h="24px"/>
+                    <div class="flex gap-[25px] items-center">
+                        <a target="_blank" href="https://vk.com">
+                            <SvgIcon name="vk" w="32px" h="32px"/>
+                        </a>
+                        <a target="_blank" href="https://web.telegram.org">
+                            <SvgIcon name="tg" w="32px" h="32px"/>
+                        </a>
+                        <a target="_blank" href="https://whatsapp.com">
+                            <SvgIcon name="wp" w="32px" h="32px"/>
+                        </a>
                     </div>
                 </div>
             </div> 
@@ -65,9 +71,21 @@ export default {
 .number-link{
     font-size: 2.5rem;
     color: $red;
+    &:hover{
+        color: $dark;
+        transition: color 0.2s;
+    }
+}
+
+.adress-link{
+    &:hover{
+        color: $red;
+        transition: color 0.2s;
+    }
 }
 
 .banner-item{
     width: 516px;
 }
+
 </style>

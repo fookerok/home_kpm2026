@@ -17,9 +17,9 @@
             <div class="text-index uppercase">
                 Эногастрономические вечера, на&nbsp;которых вино и&nbsp;еда сливаются в&nbsp;совершенные сочетания, раскрывая все секреты гастрономии. Живая музыка, создающая неповторимую атмосферу уюта и&nbsp;радости, будь&nbsp;то романтический ужин или вечер с&nbsp;друзьями.
             </div>
-            <NuxtLink to="/menu" class="cursor-pointer link-menu flex gap-[15px]">
+            <NuxtLink to="/menu" class="link-page cursor-pointer link-menu flex gap-[15px]">
                 <div class="text-sm uppercase">Открыть <br>меню ресторации</div>
-                <SvgIcon name="link-arrow" w="36px" h="36px"/>
+                <SvgIcon name="link-arrow" w="36px" h="36px" color="var(--red)"/>
             </NuxtLink>
         </div>
     </main>

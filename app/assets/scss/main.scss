@@ -24,3 +24,16 @@ body{
 .page-title{
     font-size: 1.875rem;
 }
+
+.footer-svg{
+    color: currentColor;
+}
+
+.link-page {
+    transition: all 0.2s ease-in-out; 
+    margin-bottom: 0;
+
+    &:hover {
+        margin-bottom: 5px;
+    }
+}
